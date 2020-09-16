@@ -33,24 +33,24 @@ export default function AudioCard() {
     setQuality(event.target.value);
   };
 
-  let warning;
+  // let warning;
 
-  if (quality === "Low") {
-    warning = `Music quality is degraded. Increase quality if your connection allows it.`;
-  } else {
-    warning = "";
-  }
+  // if (quality === "Low") {
+  //   warning = `Music quality is degraded. Increase quality if your connection allows it.`;
+  // } else {
+  //   warning = "";
+  // }
 
   return (
     <Card>
       <CardContent className="card-color">
         <Typography id="text-color" gutterBottom>
-          <h1>Audio Quality</h1>
-          <p>{warning}</p>
+          <h1>Desired Mood</h1>
+          {/* <p>{warning}</p> */}
         </Typography>
 
         <FormControl variant="filled" className={classes.formControl}>
-          <InputLabel id="text-color">Quality</InputLabel>
+          <InputLabel id="text-color">Moods</InputLabel>
           <Select
             id="text-color"
             className={classes.dropDown}

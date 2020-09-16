@@ -9,7 +9,7 @@ const NavBar = () => {
       <AppBar position="static">
         <Toolbar className="navBar">
           <Typography variant="title" color="inherit">
-            <h1>MoodMaker</h1>
+            <h1 className="appName">MoodMaker</h1>
           </Typography>
         </Toolbar>
       </AppBar>

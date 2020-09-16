@@ -7,6 +7,27 @@
   pointer-events: none;
 }
 
+.fields {
+  text-align: center;
+}
+
+.username {
+  margin-top: 10px;
+}
+
+.password {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.appName {
+  margin-left: 400px;
+}
+
+#text-color {
+  opacity: ;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
