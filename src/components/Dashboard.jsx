@@ -1,6 +1,10 @@
 import React, { Component } from "react";
-import AudioCard from "./AudioComponent";
-import Movinghand from "./video/Movinghand.mp4"
+import AudioCard from "./MoodsComponent";
+import Running from "./video/Running.mp4"
+import Happy from "./images/Happy.jpg"
+import Motivated from "./images/Motivated.jpg"
+import WorkoutPic from "./images/WorkoutPic.webp"
+import NavBar from "./NavBar"
 
 
 class Dashboard extends Component {
@@ -32,24 +36,24 @@ class Dashboard extends Component {
   render() {
     return (
       <div className="container">
-        <video autoPlay loop muted 
-        style= {{
-          position: "absolute",
-          width: "100%",
-          left: "50%",
-          top: "50%",
-          height: "100%",
-          objectFit: "cover",
-          transform: "translate(-50%, -50%)",
-          opcaity: 10
-          // zIndex: "-1"
-        }}
-        >
-          <source src={Movinghand} type ="video/mp4"/>
+        <NavBar />
+        <video className="video" autoPlay loop muted>
+          <source src={Running} type ="video/mp4"/>
         </video>
         <div className="audioCard">
           <AudioCard />
         </div>
+        <ul className="dash-img">
+          <li>
+            <img src={Happy} alt=""/>
+          </li>
+          <li>
+            <img src={Motivated} alt=""/>
+          </li>
+          <li>
+            <img src={WorkoutPic} alt=""/>
+          </li>
+        </ul>
       </div>
     );
   }

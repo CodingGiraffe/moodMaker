@@ -1,0 +1,62 @@
+
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import Card from "@material-ui/core/Card";
+import CardContent from "@material-ui/core/CardContent";
+import Typography from "@material-ui/core/Typography";
+import InputLabel from "@material-ui/core/InputLabel";
+import MenuItem from "@material-ui/core/MenuItem";
+import FormControl from "@material-ui/core/FormControl";
+import Select from "@material-ui/core/Select";
+import Workout from "./WorkoutComponent"
+
+const useStyles = makeStyles({
+  root: {
+    minWidth: 275,
+  },
+  title: {
+    fontSize: 14,
+  },
+  pos: {
+    marginBottom: 12,
+  },
+  dropDown: {
+    width: 200,
+  },
+});
+
+export default function AudioCard() {
+  const classes = useStyles();
+
+  const [quality, setQuality] = React.useState("");
+
+  const handleChange = (event) => {
+    setQuality(event.target.value);
+  };
+
+ 
+
+  return (
+    <Card className="card">
+      <CardContent className="card-color">
+        <Typography id="text-color" gutterBottom>
+          <h1>Desired Mood</h1>
+        </Typography>
+
+        <FormControl variant="filled" className={classes.formControl}>
+          <InputLabel id="text-color">Moods</InputLabel>
+          <Select
+            id="text-color"
+            className={classes.dropDown}
+            value={quality}
+            onChange={handleChange}
+          >
+            <MenuItem value={"Low"}>Happy</MenuItem>
+            <MenuItem onClick={Workout} value={"Normal"}>Workout</MenuItem>
+            <MenuItem value={"High"}>Motivated</MenuItem>
+          </Select>
+        </FormControl>
+      </CardContent>
+    </Card>
+  );
+}

@@ -6,9 +6,9 @@ import Typography from "@material-ui/core/Typography";
 const NavBar = () => {
   return (
     <div>
-      <AppBar position="static">
+      <AppBar className="aa" position="static">
         <Toolbar className="navBar">
-          <Typography variant="title" color="inherit">
+          <Typography className="head" variant="title" color="inherit">
             <h1 className="appName">MoodMaker</h1>
           </Typography>
         </Toolbar>
