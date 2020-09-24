@@ -1,4 +1,3 @@
-
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Card from "@material-ui/core/Card";
@@ -8,7 +7,22 @@ import InputLabel from "@material-ui/core/InputLabel";
 import MenuItem from "@material-ui/core/MenuItem";
 import FormControl from "@material-ui/core/FormControl";
 import Select from "@material-ui/core/Select";
-import Workout from "./WorkoutComponent"
+import Workout from "./WorkoutComponent";
+
+const videos = {
+  happy: [
+    "https://www.youtube.com/watch?v=FPBmVnsZaN8&ab_channel=Psych2Go",
+    "https://www.youtube.com/watch?v=DODLEX4zzLQ&ab_channel=TigerProductions",
+    "https://www.youtube.com/watch?v=Ai_8pJf5TSs&ab_channel=America%27sFunniestHomeVideos"
+  ],
+  workout: [
+    "https://www.youtube.com/watch?v=4bFhYvADjl4&ab_channel=RayAndPES",
+    "https://www.youtube.com/watch?v=Zy5c2k3W458",
+  ],
+  motivated: [
+    "https://www.youtube.com/watch?v=PAFcHMidJj8&ab_channel=BurakDe%C4%9FerBi%C3%A7er",
+  ],
+};
 
 const useStyles = makeStyles({
   root: {
@@ -25,16 +39,15 @@ const useStyles = makeStyles({
   },
 });
 
-export default function AudioCard() {
+export default function Moods() {
   const classes = useStyles();
 
-  const [quality, setQuality] = React.useState("");
+  const [mood, setMood] = React.useState("");
 
   const handleChange = (event) => {
-    setQuality(event.target.value);
+    setMood(event.target.value);
+    console.log(event.target.value);
   };
-
- 
 
   return (
     <Card className="card">
@@ -48,14 +61,15 @@ export default function AudioCard() {
           <Select
             id="text-color"
             className={classes.dropDown}
-            value={quality}
+            value={mood}
             onChange={handleChange}
           >
-            <MenuItem value={"Low"}>Happy</MenuItem>
-            <MenuItem onClick={Workout} value={"Normal"}>Workout</MenuItem>
-            <MenuItem value={"High"}>Motivated</MenuItem>
+            <MenuItem className="happy" value={"happy"}>Happy</MenuItem>
+            <MenuItem value={"workout"}>Workout</MenuItem>
+            <MenuItem value={"motivated"}>Motivated</MenuItem>
           </Select>
         </FormControl>
+        {mood && videos[mood].map((x) => <Workout url={x} />)}
       </CardContent>
     </Card>
   );

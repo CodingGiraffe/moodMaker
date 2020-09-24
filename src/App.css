@@ -4,6 +4,7 @@
 
 .fields {
   text-align: center;
+  background-color: lightblue;
 }
 
 .username {
@@ -35,6 +36,7 @@
 
 .card-color {
   color: black;
+  background-color:lightblue;
 }
 
 .navBar {
@@ -76,7 +78,14 @@ img {
   padding: 0px,
 }
 
-/* h1 {
+h1 {
   font-size: 50px;
-} */
+  color: blue;
+}
 
+.player {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 50px;
+}

@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import AudioCard from "./MoodsComponent";
-import Running from "./video/Running.mp4"
+import Moods from "./MoodsComponent";
 import Happy from "./images/Happy.jpg"
 import Motivated from "./images/Motivated.jpg"
 import WorkoutPic from "./images/WorkoutPic.webp"
 import NavBar from "./NavBar"
+
 
 
 class Dashboard extends Component {
@@ -37,11 +37,11 @@ class Dashboard extends Component {
     return (
       <div className="container">
         <NavBar />
-        <video className="video" autoPlay loop muted>
+        {/* <video className="video" autoPlay loop muted>
           <source src={Running} type ="video/mp4"/>
-        </video>
+        </video> */}
         <div className="audioCard">
-          <AudioCard />
+          <Moods />
         </div>
         <ul className="dash-img">
           <li>

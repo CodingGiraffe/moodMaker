@@ -1,12 +1,11 @@
 import React from 'react';
 import ReactPlayer from "react-player"
 
-function Workout() {
+function Workout(props) {
     return (
-      <div>
-        <h3>Embed YouTube video - <a href="https://www.cluemediator.com">Clue Mediator</a></h3>
+      <div className = "player">
         <ReactPlayer
-          url="https://www.youtube.com/watch?v=UVCP4bKy9Iw"
+          url= {props.url}
         />
       </div>
     );
