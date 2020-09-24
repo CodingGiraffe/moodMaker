@@ -21,12 +21,10 @@ const videos = {
     "https://www.youtube.com/watch?v=nFBdDaK_6Ko&ab_channel=AlphaMotivation",
     "https://www.youtube.com/watch?v=dkKTUIipQpw&ab_channel=BeInspired-WorkoutMotivation",
     "https://www.youtube.com/watch?v=ESYYby1FuPc&ab_channel=MulliganBrothers"
-
-
   ],
   motivated: [
     "https://www.youtube.com/watch?v=PAFcHMidJj8&ab_channel=BurakDe%C4%9FerBi%C3%A7er",
-    "https://www.youtube.com/watch?v=TBuIGBCF9jc&ab_channel=MotivationHub"
+    "https://www.youtube.com/watch?v=TBuIGBCF9jc&ab_channel=MotivationHub",
   ],
 };
 
@@ -59,7 +57,7 @@ export default function Moods() {
     <Card className="card">
       <CardContent className="card-color">
         <Typography id="text-color" gutterBottom>
-          <h1>Desired Mood</h1>
+          <h1>DESIRED MOOD</h1>
         </Typography>
 
         <FormControl variant="filled" className={classes.formControl}>
