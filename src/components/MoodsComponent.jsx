@@ -16,11 +16,13 @@ const videos = {
     "https://www.youtube.com/watch?v=Ai_8pJf5TSs&ab_channel=America%27sFunniestHomeVideos"
   ],
   workout: [
-    "https://www.youtube.com/watch?v=4bFhYvADjl4&ab_channel=RayAndPES",
+    "https://www.youtube.com/watch?v=EykWcFEtFqo&ab_channel=HowardFreemanMotivation",
     "https://www.youtube.com/watch?v=Zy5c2k3W458",
+    "https://www.youtube.com/watch?v=50XxKdBQHqY&ab_channel=JREFilms"
   ],
   motivated: [
     "https://www.youtube.com/watch?v=PAFcHMidJj8&ab_channel=BurakDe%C4%9FerBi%C3%A7er",
+    "https://www.youtube.com/watch?v=TBuIGBCF9jc&ab_channel=MotivationHub"
   ],
 };
 

@@ -4,7 +4,7 @@ import ReactPlayer from "react-player"
 function Workout(props) {
     return (
       <div className = "player">
-        <ReactPlayer
+        <ReactPlayer className="react-player"
           url= {props.url}
         />
       </div>

@@ -7,8 +7,12 @@
   background-color: lightblue;
 }
 
+.appName {
+  color: white
+}
+
 .username {
-  margin-top: 10px;
+  margin-top: 100px;
 }
 
 .password {
@@ -41,6 +45,10 @@
 
 .navBar {
   text-align: center;
+}
+
+.nav-div {
+  background-color: lightblue;
 }
 
 .video {
@@ -80,7 +88,7 @@ img {
 
 h1 {
   font-size: 50px;
-  color: blue;
+  color: #3f51B5;
 }
 
 .player {
