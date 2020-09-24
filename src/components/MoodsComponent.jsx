@@ -55,7 +55,7 @@ export default function Moods() {
     <Card className="card">
       <CardContent className="card-color">
         <Typography id="text-color" gutterBottom>
-          <h1>Desired Mood</h1>
+          <h1>DESIRED MOOD</h1>
         </Typography>
 
         <FormControl variant="filled" className={classes.formControl}>
