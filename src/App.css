@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
-@import url('https://fonts.googleapis.com/css?family=Anton');
+@import url('https://fonts.googleapis.com/css?family=BlackOpsOne');
 
 
 .App {
@@ -94,7 +94,7 @@ img {
 h1 {
   font-size: 50px;
   color: #3f51B5;
-  font-family: 'Anton';
+  font-family: 'BlackOpsOne';
 }
 
 .player {
