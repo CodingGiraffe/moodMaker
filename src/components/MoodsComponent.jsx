@@ -21,11 +21,6 @@ const videos = {
     "https://www.youtube.com/watch?v=nFBdDaK_6Ko&ab_channel=AlphaMotivation",
     "https://www.youtube.com/watch?v=dkKTUIipQpw&ab_channel=BeInspired-WorkoutMotivation",
     "https://www.youtube.com/watch?v=ESYYby1FuPc&ab_channel=MulliganBrothers",
-    "https://www.youtube.com/watch?v=EykWcFEtFqo&ab_channel=HowardFreemanMotivation",
-    "https://www.youtube.com/watch?v=Zy5c2k3W458",
-    "https://www.youtube.com/watch?v=nFBdDaK_6Ko&ab_channel=AlphaMotivation",
-    "https://www.youtube.com/watch?v=dkKTUIipQpw&ab_channel=BeInspired-WorkoutMotivation",
-    "https://www.youtube.com/watch?v=ESYYby1FuPc&ab_channel=MulliganBrothers"
   ],
   motivated: [
     "https://www.youtube.com/watch?v=PAFcHMidJj8&ab_channel=BurakDe%C4%9FerBi%C3%A7er",
