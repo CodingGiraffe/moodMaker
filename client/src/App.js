@@ -1,27 +1,20 @@
-import React, { Component } from "react";
-import "./App.css";
-import LoginComponent from "./components/LoginComponent";
-import Dashboard from "./components/Dashboard";
+import React from 'react';
+import Navigation from './components/Navigation'
+import './App.css'
+import Router from './Router'
+import { BrowserRouter } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import store from './redux/store'
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      loggedIn: false,
-    };
-  }
-
-  toggle = () => {
-    this.setState({ loggedIn: !this.state.loggedIn });
-  };
-
-  render() {
-    if (this.state.loggedIn) {
-      return <Dashboard />;
-    } else {
-      return <LoginComponent login={this.toggle} />;
-    }
-  }
+function App() {
+  return (
+    <Provider store={store}>
+      <BrowserRouter>
+        <Navigation />
+        <Router />
+      </BrowserRouter>
+    </Provider>
+  );
 }
 
 export default App;
