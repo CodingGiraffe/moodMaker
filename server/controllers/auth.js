@@ -1,6 +1,7 @@
 const axios = require('axios')
 const bcrypt =  require('bcrypt')
 const mysql = require('mysql')
+const jwt = require('jsonwebtoken')
 const pool = require('../sql/connection')
 const { handleSQLError } = require('../sql/error')
 
@@ -26,7 +27,7 @@ const signup = (req, res) => {
 
 
 const login = (req, res) => {
-    const { username, password } = req.body
+    const { email, password } = req.body
   
     axios(`https://${process.env.AUTH0_DOMAIN}/oauth/token`, {
       method: 'POST',
@@ -35,7 +36,7 @@ const login = (req, res) => {
       },
       data: {
         grant_type: 'password',
-        username: username,
+        email: email,
         password: password,
         audience: process.env.AUTH0_IDENTITY,
         connection: 'Username-Password-Authentication',
@@ -53,6 +54,29 @@ const login = (req, res) => {
     .catch(e => {
       res.send(e)
     })
+
+    let sql = "SELECT * FROM users WHERE email = ?"
+    sql = mysql.format(sql, [ email ])
+
+    pool.query(sql, (err, rows) => {
+    if (err) return handleSQLError(res, err)
+    if (!rows.length) return res.status(404).send('No matching users')
+
+    const hash = rows[0].password
+    bcrypt.compare(password, hash)
+      .then(result => {
+        if (!result) return res.status(400).send('Invalid password')
+
+        const data = { ...rows[0] }
+        data.password = 'REDACTED'
+
+        const token = jwt.sign(data, 'secret')
+        res.json({
+          msg: 'Login successful',
+          token
+        })
+      })
+  })
 
 }
 
