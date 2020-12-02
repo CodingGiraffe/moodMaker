@@ -1,11 +1,9 @@
-import React, { Component } from "react";
-import Moods from "./MoodsComponent";
-import Happy from "./images/Happy.jpg"
-import Motivated from "./images/Motivated.jpg"
-import WorkoutPic from "./images/WorkoutPic.webp"
-import NavBar from "./NavBar"
-
-
+import React, { Component } from 'react';
+import Moods from './MoodsComponent';
+import Happy from './images/Happy.jpg';
+import Motivated from './images/Motivated.jpg';
+import WorkoutPic from './images/WorkoutPic.webp';
+import NavBar from './NavBar';
 
 class Dashboard extends Component {
   constructor(props) {
@@ -15,23 +13,6 @@ class Dashboard extends Component {
       isOnline: false,
     };
   }
-
-  handleChange = (e) => {
-    this.setState({ notifications: [] });
-  };
-
-  handleSwitch = () => {
-    this.setState({ isOnline: !this.state.isOnline });
-    this.handleNotifications();
-  };
-
-  handleNotifications = () => {
-    let notification = "You're offline";
-    this.setState({
-      notifications: [...this.state.notifications, notification],
-    });
-  };
-
 
   render() {
     return (
@@ -45,13 +26,13 @@ class Dashboard extends Component {
         </div>
         <ul className="dash-img">
           <li>
-            <img src={Happy} alt=""/>
+            <img src={Happy} alt="" />
           </li>
           <li>
-            <img src={Motivated} alt=""/>
+            <img src={Motivated} alt="" />
           </li>
           <li>
-            <img src={WorkoutPic} alt=""/>
+            <img src={WorkoutPic} alt="" />
           </li>
         </ul>
       </div>
