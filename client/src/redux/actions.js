@@ -36,27 +36,25 @@ export const login = (data) => {
   return function (dispatch) {
     axios
       .post('http://localhost:4001/auth/login', {
-        first_name: data.firstName,
-        last_name: data.lastName,
         email: data.email,
         password: data.password,
       })
-      .then(() => dispatch(signUpSuccess()))
+      .then(() => dispatch(loginSuccess()))
       .catch((err) => {
-        dispatch(signUpFailure(err));
+        dispatch(loginFailure(err));
       });
   };
 };
 
-const signUpSuccess = () => {
+const loginSuccess = () => {
   return {
-    type: ACTION_TYPE.SIGNUP_SUCCESS,
+    type: ACTION_TYPE.LOGIN_SUCCESS,
   };
 };
 
-const signUpFailure = (err) => {
+const loginFailure = (err) => {
   return {
-    type: ACTION_TYPE.SIGNUP_FAILURE,
+    type: ACTION_TYPE.LOGIN_FAILURE,
     err,
   };
 };
