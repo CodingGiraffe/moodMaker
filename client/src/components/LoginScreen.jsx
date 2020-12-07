@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 // import { Link } from 'react-router-dom'
 // import Dashboard from './Dashboard'
 import { TextField, Button, Container, Grid, Link } from '@material-ui/core';
-import SignUp from './SignUp';
+// import SignUp from './SignUp';
+import { connect } from 'react-redux';
+import { login } from '../redux/actions';
 
 class LoginScreen extends Component {
   state = {
@@ -90,4 +92,11 @@ class LoginScreen extends Component {
   }
 }
 
-export default LoginScreen;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    login: (data) => {
+      dispatch(login(data));
+    },
+  };
+};
+export default connect(null, mapDispatchToProps)(LoginScreen);
