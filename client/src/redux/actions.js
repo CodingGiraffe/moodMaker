@@ -32,23 +32,25 @@ const signUpFailure = (err) => {
 };
 
 export const login = (data) => {
-  console.log('data:', data);
   return function (dispatch) {
     axios
       .post('http://localhost:4001/auth/login', {
         email: data.email,
         password: data.password,
       })
-      .then(() => dispatch(loginSuccess()))
+      .then((res) => dispatch(loginSuccess(res)))
       .catch((err) => {
         dispatch(loginFailure(err));
       });
   };
 };
 
-const loginSuccess = () => {
+const loginSuccess = (res) => {
+  console.log('res :', res);
+  localStorage.setItem('token', res.data.token);
   return {
     type: ACTION_TYPE.LOGIN_SUCCESS,
+    msg: 'login success',
   };
 };
 

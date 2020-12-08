@@ -8,7 +8,7 @@ import { login } from '../redux/actions';
 
 class LoginScreen extends Component {
   state = {
-    username: '',
+    email: '',
     password: '',
   };
 
@@ -25,9 +25,7 @@ class LoginScreen extends Component {
 
   login = (e) => {
     e.preventDefault();
-    document.cookie = 'loggedIn=true;max-age=60*1000';
-    document.cookie = 'Username=' + this.state.username + ';max-age=60*1000';
-    window.location.replace('/');
+    this.props.login(this.state);
   };
 
   render() {
@@ -48,8 +46,8 @@ class LoginScreen extends Component {
                 <TextField
                   required
                   onChange={this.handleTextChange}
-                  value={this.state.username}
-                  name="username"
+                  value={this.state.email}
+                  name="email"
                   label="Email"
                   type="text"
                 />
