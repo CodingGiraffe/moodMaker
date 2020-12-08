@@ -81,6 +81,7 @@ class LoginScreen extends Component {
           </Grid>
         </Container>
         <div>
+          <br />
           <Link>
             <a href="/SignUp">Click Here to Sign Up</a>
           </Link>

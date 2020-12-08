@@ -3,7 +3,7 @@ import Moods from './MoodsComponent';
 import Happy from './images/Happy.jpg';
 import Motivated from './images/Motivated.jpg';
 import WorkoutPic from './images/WorkoutPic.webp';
-import NavBar from './NavBar';
+// import NavBar from './NavBar';
 
 class Dashboard extends Component {
   constructor(props) {
@@ -17,7 +17,7 @@ class Dashboard extends Component {
   render() {
     return (
       <div className="container">
-        <NavBar />
+        {/* <NavBar /> */}
         {/* <video className="video" autoPlay loop muted>
           <source src={Running} type ="video/mp4"/>
         </video> */}

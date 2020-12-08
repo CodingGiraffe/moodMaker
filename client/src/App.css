@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
 @import url('https://fonts.googleapis.com/css?family=BlackOpsOne');
 
-
 .App {
   text-align: center;
 }
@@ -45,7 +44,7 @@
 
 .card-color {
   color: black;
-  background-color:lightblue;
+  background-color: lightblue;
 }
 
 .navBar {
@@ -56,45 +55,45 @@
   background-color: lightblue;
 }
 
-.video {
+/* .video {
   position: fixed;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    width: auto;
-    height: auto;
-    /* z-index: 1; */
-    transform: translate(-50%, -50%);
-    opacity: .2;
-}
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  /* z-index: 1; */
+/* transform: translate(-50%, -50%);
+  opacity: 0.2; */
+/* } */
 
 .dash-img {
   display: flex;
   flex-direction: row;
-  justify-content: space-between
+  justify-content: space-between;
 }
 
 ul {
-  list-style-type: none
+  list-style-type: none;
 }
 
 li {
-  padding: 20px
+  padding: 20px;
 }
 
 img {
   float: left;
-  width:  300px;
+  width: 300px;
   height: 300px;
   object-fit: cover;
-  padding: 0px,
+  padding: 0px;
 }
 
 h1 {
   font-size: 50px;
-  color: #3f51B5;
-  font-family: 'BlackOpsOne';
+  color: #3f51b5;
+  font-family: 'Josefin Sans', cursive;
 }
 
 .player {
@@ -102,4 +101,19 @@ h1 {
   justify-content: space-evenly;
   align-items: center;
   padding: 50px;
+}
+
+a {
+  color: white;
+}
+
+.nav-list-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title {
+  color: white;
+  font-family: 'Josefin Sans', cursive;
 }
