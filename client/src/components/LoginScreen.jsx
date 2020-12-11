@@ -5,12 +5,23 @@ import { TextField, Button, Container, Grid, Link } from '@material-ui/core';
 // import SignUp from './SignUp';
 import { connect } from 'react-redux';
 import { login } from '../redux/actions';
+import { withRouter } from 'react-router-dom';
 
 class LoginScreen extends Component {
   state = {
     email: '',
     password: '',
   };
+
+  componentDidUpdate(prevProps, prevState) {
+    // loading flags, success msg
+    if (prevProps.loginLoading && !this.props.loginLoading) {
+      if (this.props.msg) {
+        // trigger re render with History
+        this.props.history.push('/Dashboard');
+      }
+    }
+  }
 
   // handleInput = ({ target: { name, value } }) => {
   //   const formValue = { ...this.state.formValue, [name]: value };
@@ -29,6 +40,7 @@ class LoginScreen extends Component {
   };
 
   render() {
+    console.log('props', this.props);
     return (
       <div className="App">
         <Container maxWidth="sm">
@@ -91,6 +103,13 @@ class LoginScreen extends Component {
   }
 }
 
+const mapStateToProps = (state) => {
+  return {
+    loginLoading: state.login.loginLoading,
+    msg: state.login.msg,
+  };
+};
+
 const mapDispatchToProps = (dispatch) => {
   return {
     login: (data) => {
@@ -98,4 +117,6 @@ const mapDispatchToProps = (dispatch) => {
     },
   };
 };
-export default connect(null, mapDispatchToProps)(LoginScreen);
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(LoginScreen)
+);

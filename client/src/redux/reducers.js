@@ -1,19 +1,30 @@
 import { combineReducers } from 'redux';
+import ACTION_TYPE from './types';
+import StoreState from './state';
 
-import ACTION_TYPES from './types';
-
-const loggedIn = (state = '', action) => {
+const loginreducer = (state = StoreState.login, action) => {
   console.log('action : ', action);
   switch (action.type) {
-    case ACTION_TYPES.LOGIN_SUCCESS:
-      return action.msg;
-    case 'REMOVE_LISTING':
-      let listing = [...state];
-      listing.splice(action.value, 1);
-      return listing;
+    case ACTION_TYPE.LOGIN_SUCCESS:
+      return {
+        ...state,
+        msg: action.msg,
+      };
+    case ACTION_TYPE.LOGIN_LOADING:
+      return {
+        ...state,
+        loginLoading: !state.loginLoading,
+      };
     default:
       return state;
   }
 };
 
-export default combineReducers({ loggedIn });
+const userReducer = (state = StoreState.user, action) => {
+  return state;
+};
+
+export default combineReducers({
+  login: loginreducer,
+  user: userReducer,
+});

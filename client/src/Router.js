@@ -25,10 +25,10 @@ const ProtectedRoute = ({ component: Component, ...rest }) => {
 };
 
 const Router = (props) => {
-  console.log('props: ', props);
+  // console.log('props: ', props);
   return (
     <div>
-      {props.loggedIn ? <p>Logged In</p> : <p>Test</p>}
+      {/* {props.loggedIn ? <p>Logged In</p> : <p>Test</p>} */}
       <Switch>
         {/* <Route exact path="/" component={Listings} /> */}
         {/* <Route path="/listing/:id" component={Listing}/> */}
@@ -43,7 +43,7 @@ const Router = (props) => {
 const mapStateToProps = (state) => {
   console.log('state :', state);
   return {
-    loggedIn: state.loggedIn,
+    loggedIn: state.login,
   };
 };
 export default connect(mapStateToProps, null)(Router);

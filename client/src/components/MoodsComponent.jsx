@@ -44,7 +44,7 @@ const videos = {
     'https://www.youtube.com/watch?v=kJFB6rH3z2A&ab_channel=BobRoss',
     'https://www.youtube.com/watch?v=ZToicYcHIOU&ab_channel=Calm',
   ],
-  hunting: [
+  running: [
     'https://www.youtube.com/watch?v=lFcSrYw-ARY&ab_channel=MeditationRelaxMusic',
     'https://www.youtube.com/watch?v=1ZYbU82GVz4&ab_channel=SoothingRelaxation',
     'https://www.youtube.com/watch?v=kJFB6rH3z2A&ab_channel=BobRoss',
@@ -122,7 +122,7 @@ export default function Moods() {
               Golf
             </MenuItem>
             <MenuItem value={'fishing'}>Fishing</MenuItem>
-            <MenuItem value={'hunting'}>Hunting</MenuItem>
+            <MenuItem value={'running'}>Running</MenuItem>
             <MenuItem value={'surfing'}>Surfing</MenuItem>
           </Select>
         </FormControl>
