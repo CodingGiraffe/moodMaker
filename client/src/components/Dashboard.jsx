@@ -17,10 +17,13 @@ class Dashboard extends Component {
   render() {
     return (
       <div className="container">
-        {/* <NavBar /> */}
-        {/* <video className="video" autoPlay loop muted>
-          <source src={Running} type ="video/mp4"/>
-        </video> */}
+        <p>
+          Welcome to MoodMaker! <br /> <br />
+          Here at MoodMaker we supply all the motivation you need to start a new
+          hobby, get back in the gym, learn a new instrument, or change your
+          current mood. Simply select from the dropdown options and our curated
+          videos will do the rest. Enjoy!
+        </p>
         <div className="audioCard">
           <Moods />
         </div>

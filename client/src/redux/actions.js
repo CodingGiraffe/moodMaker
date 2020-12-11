@@ -4,7 +4,7 @@ import axios from 'axios';
 let endpointURL = '';
 // if production flag
 if (process.env.NODE_ENV === 'production') {
-  endpointURL = 'https://moodmaker-aca.herokuapp.com/auth';
+  endpointURL = 'https://moodmaker.us/auth';
 } else {
   endpointURL = 'http://localhost:4001/auth';
 }
@@ -12,6 +12,7 @@ if (process.env.NODE_ENV === 'production') {
 export const signUp = (data) => {
   console.log('data:', data);
   return function (dispatch) {
+    dispatch(signupLoading());
     axios
       .post(endpointURL + '/signup', {
         first_name: data.firstName,
@@ -19,22 +20,34 @@ export const signUp = (data) => {
         email: data.email,
         password: data.password,
       })
-      .then(() => dispatch(signUpSuccess()))
+      .then((res) => {
+        dispatch(signupSuccess(res));
+        dispatch(signupLoading());
+      })
       .catch((err) => {
-        dispatch(signUpFailure(err));
+        dispatch(signupFailure(err));
+        dispatch(signupLoading());
       });
   };
 };
 
-const signUpSuccess = () => {
+const signupLoading = () => {
   return {
-    type: ACTION_TYPE.SIGNUP_SUCCESS,
+    type: ACTION_TYPE.SIGNUP_LOADING,
   };
 };
 
-const signUpFailure = (err) => {
+const signupSuccess = (res) => {
+  localStorage.setItem('token', res.data.token);
   return {
-    type: ACTION_TYPE.SIGNUP_FAILURE,
+    type: ACTION_TYPE.LOGIN_SUCCESS,
+    msg: 'login success',
+  };
+};
+
+const signupFailure = (err) => {
+  return {
+    type: ACTION_TYPE.LOGIN_FAILURE,
     err,
   };
 };

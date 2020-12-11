@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { TextField, Button, Container, Grid } from '@material-ui/core';
 import { connect } from 'react-redux';
 import { signUp } from '../redux/actions';
+import { withRouter } from 'react-router-dom';
 
 class SignUp extends Component {
   state = {
@@ -17,6 +18,13 @@ class SignUp extends Component {
   //   const formValue = { ...this.state.formValue, [name]: value };
   //   this.setState({ formValue });
   // };
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.signupLoading && !this.props.signupLoading) {
+      if (this.props.msg) {
+        this.props.history.push('/');
+      }
+    }
+  }
 
   handleTextChange = (e) => {
     const state = { ...this.state };
@@ -106,6 +114,14 @@ class SignUp extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    signLoading: state.signup.signupLoading,
+    msg: state.signup.msg,
+  };
+};
+
 const mapDispatchToProps = (dispatch) => {
   return {
     signUp: (data) => {
@@ -113,4 +129,4 @@ const mapDispatchToProps = (dispatch) => {
     },
   };
 };
-export default connect(null, mapDispatchToProps)(SignUp);
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(SignUp));
