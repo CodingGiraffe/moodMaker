@@ -13,7 +13,7 @@ export const signUp = (data) => {
   console.log('data:', data);
   return function (dispatch) {
     axios
-      .post(`endpointURL${'/signup'}`, {
+      .post(endpointURL + '/signup', {
         first_name: data.firstName,
         last_name: data.lastName,
         email: data.email,
@@ -43,7 +43,7 @@ export const login = (data) => {
   return function (dispatch) {
     dispatch(loginLoading()); // before we post to the api set loading flag -> flipped to true
     axios
-      .post(`endpointURL${'/login'}`, {
+      .post(endpointURL + '/login', {
         email: data.email,
         password: data.password,
       })
