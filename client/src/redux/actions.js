@@ -10,7 +10,6 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 export const signUp = (data) => {
-  console.log('data:', data);
   return function (dispatch) {
     dispatch(signupLoading());
     axios
@@ -38,7 +37,7 @@ const signupLoading = () => {
 };
 
 const signupSuccess = (res) => {
-  localStorage.setItem('token', res.data.token);
+  // localStorage.setItem('token', res.data.token);
   return {
     type: ACTION_TYPE.SIGNUP_SUCCESS,
     msg: 'signup success',
