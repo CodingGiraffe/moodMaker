@@ -117,7 +117,7 @@ class SignUp extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    signLoading: state.signup.signupLoading,
+    signupLoading: state.signup.signupLoading,
     msg: state.signup.msg,
   };
 };

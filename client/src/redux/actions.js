@@ -40,14 +40,14 @@ const signupLoading = () => {
 const signupSuccess = (res) => {
   localStorage.setItem('token', res.data.token);
   return {
-    type: ACTION_TYPE.LOGIN_SUCCESS,
-    msg: 'login success',
+    type: ACTION_TYPE.SIGNUP_SUCCESS,
+    msg: 'signup success',
   };
 };
 
 const signupFailure = (err) => {
   return {
-    type: ACTION_TYPE.LOGIN_FAILURE,
+    type: ACTION_TYPE.SIGNUP_FAILURE,
     err,
   };
 };
