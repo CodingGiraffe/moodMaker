@@ -4,7 +4,7 @@ import axios from 'axios';
 let endpointURL = '';
 // if production flag
 if (process.env.NODE_ENV === 'production') {
-  endpointURL = 'https://moodmaker-aca.herokuapp.com/auth';
+  endpointURL = 'http://www.moodmaker.us/auth';
 } else {
   endpointURL = 'http://localhost:4001/auth';
 }
@@ -36,7 +36,7 @@ const signupLoading = () => {
   };
 };
 
-const signupSuccess = (res) => {
+const signupSuccess = () => {
   // localStorage.setItem('token', res.data.token);
   return {
     type: ACTION_TYPE.SIGNUP_SUCCESS,
