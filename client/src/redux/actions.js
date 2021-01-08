@@ -1,19 +1,19 @@
 import ACTION_TYPE from './types';
 import axios from 'axios';
 
-let endpointURL = '';
-// if production flag
-if (process.env.NODE_ENV === 'production') {
-  endpointURL = 'https://moodmaker-aca.herokuapp.com/auth';
-} else {
-  endpointURL = 'http://localhost:4001/auth';
-}
+// let endpointURL = '';
+// // if production flag
+// if (process.env.NODE_ENV === 'production') {
+//   endpointURL = 'https://moodmaker-aca.herokuapp.com/auth';
+// } else {
+//   endpointURL = 'http://localhost:4001/auth';
+// }
 
 export const signUp = (data) => {
   return function (dispatch) {
     dispatch(signupLoading());
     axios
-      .post(endpointURL + '/signup', {
+      .post('https://moodmaker-aca.herokuapp.com/auth/signup', {
         first_name: data.firstName,
         last_name: data.lastName,
         email: data.email,
@@ -55,7 +55,7 @@ export const login = (data) => {
   return function (dispatch) {
     dispatch(loginLoading()); // before we post to the api set loading flag -> flipped to true
     axios
-      .post(endpointURL + '/login', {
+      .post('https://moodmaker-aca.herokuapp.com/auth/login', {
         email: data.email,
         password: data.password,
       })
