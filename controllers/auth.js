@@ -30,7 +30,7 @@ const signup = (req, res) => {
 const login = (req, res) => {
   const { email, password } = req.body;
 
-  axios(`https://${process.env.AUTH0_DOMAIN}/oauth/token`, {
+  axios(`https://dev-wgfz6xje.auth0.com/oauth/token`, {
     method: 'POST',
     headers: {
       'content-type': 'application/json',
@@ -39,11 +39,12 @@ const login = (req, res) => {
       grant_type: 'password',
       email: email,
       password: password,
-      audience: process.env.AUTH0_IDENTITY,
+      audience: 'myProject',
       connection: 'Username-Password-Authentication',
       scope: 'openid',
-      client_id: process.env.AUTH0_CLIENT_ID,
-      client_secret: process.env.AUTH0_CLIENT_SECRET,
+      client_id: '64t69lZSzk2JiEp6wGXj6f2V0AcDr7Qt',
+      client_secret:
+        '9CqkZ42nKWvBiwQeFMyT9LiLh6wJTtHpMu2JKBv4cBGSQORjTkSiaVYAMkKyjlr-',
     },
   })
     .then((response) => {
