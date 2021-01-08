@@ -4,7 +4,7 @@ import axios from 'axios';
 let endpointURL = '';
 // if production flag
 if (process.env.NODE_ENV === 'production') {
-  endpointURL = 'https://moodmaker.us/auth';
+  endpointURL = 'https://moodmaker-aca.herokuapp.com/auth';
 } else {
   endpointURL = 'http://localhost:4001/auth';
 }
