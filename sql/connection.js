@@ -6,7 +6,10 @@ class Connection {
     if (!this.pool) {
       console.log('creating connection...');
       this.pool = mysql.createPool({
-        connectionLimit: 100,
+        connectionLimit: 1000,
+        connectTimeout: 60 * 60 * 1000,
+        acquireTimeout: 60 * 60 * 1000,
+        timeout: 60 * 60 * 1000,
         host: 'den1.mysql6.gear.host',
         user: 'moodmakerdb',
         password: process.env.DB_PWORD,
